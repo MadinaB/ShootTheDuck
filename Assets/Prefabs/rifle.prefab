@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4988923290725092}
   - component: {fileID: 212880509681890806}
   - component: {fileID: 114991565712506064}
+  - component: {fileID: 114961117320707020}
   m_Layer: 0
   m_Name: rifle
   m_TagString: Untagged
@@ -41,6 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114961117320707020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675801403517248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e67cd5f5f5c4402d82b05f584d1b46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 4111205105218842, guid: 02d483f8319034305be209f8d594e2b6, type: 2}
+  shootingRate: 0.25
 --- !u!114 &114991565712506064
 MonoBehaviour:
   m_ObjectHideFlags: 1

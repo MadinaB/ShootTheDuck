@@ -23,6 +23,18 @@ public class GunMoveScript : MonoBehaviour {
 			changeGunDirection (-1);
 			this.transform.position = new Vector3 (mousePosition.x-0.5F, this.transform.position.y, 0F);
 		}
+
+		bool shoot = Input.GetButtonDown("Fire1");
+		shoot |= Input.GetButtonDown("Fire2");
+
+		if (shoot)
+		{
+			GunScript gun = GetComponent<GunScript>();
+			if (gun != null)
+			{
+				gun.Attack(MouseOutlineTransform.position );
+			}
+		}
 	}
 
 	void changeGunDirection(float d){
