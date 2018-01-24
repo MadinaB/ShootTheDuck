@@ -12,3 +12,7 @@ Decorations.prefab is being dynamically created at game start. Riffle gun featur
 
 ![ ](Riffle.gif)
 
+
+Duck.prefab is created. Duck can move, die, change directions reaching screen borders.
+
+![ ](DuckComesToLife.gif)
