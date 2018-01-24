@@ -7,3 +7,8 @@ All static decorative elements were collected and saved together as Decorations.
 
 ![ ](ShootTheDuckDecorationsPrefab.gif)
 
+
+Decorations.prefab is being dynamically created at game start. Riffle gun feature added, gun follows mouse horizontally. 
+
+![ ](Riffle.gif)
+
