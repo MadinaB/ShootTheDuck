@@ -36,7 +36,7 @@ public class GunScript : MonoBehaviour {
 				var heading = attackPosition - shotTransform.position;
 				var distance = heading.magnitude;
 				var direction = heading / distance; 
-				move.direction = direction ;
+				move.direction = direction.normalized ;
 			}
 		}
 	}
