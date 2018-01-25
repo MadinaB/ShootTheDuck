@@ -10,12 +10,14 @@ public class HealthScript : MonoBehaviour
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
-		GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().kill = true;
+		GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().score += damageCount;
 
 		if (hp <= 0)
 		{
 			SpecialEffectsHelperScript.Instance.Explosion(transform.position);
 			Destroy(gameObject);
+			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().kill = true;
+			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().duck_Layer = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
 		}
 	}
 		

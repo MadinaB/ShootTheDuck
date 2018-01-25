@@ -41,6 +41,7 @@ public class ShotMoveScript : MonoBehaviour {
 		} else {
 			rigidbodyComponent.velocity = new Vector3(0, 0, 0);
 			rigidbodyComponent.angularVelocity = 0F;
+			this.GetComponent<ShotScript>().damage = 0;
 		}
 	}
 }

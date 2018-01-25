@@ -45,20 +45,50 @@ TagManager:
   - name: Decorations1
     uniqueID: 84818723
     locked: 0
-  - name: PlayLine1
+  - name: CircleLine1
     uniqueID: 2710448489
+    locked: 0
+  - name: CircleLine2
+    uniqueID: 255299415
+    locked: 0
+  - name: CircleLine3
+    uniqueID: 1339783365
+    locked: 0
+  - name: CircleLine4
+    uniqueID: 1968454501
     locked: 0
   - name: Decorations2
     uniqueID: 1992732143
     locked: 0
-  - name: PlayLine2
+  - name: DuckLineBack1
     uniqueID: 674983355
+    locked: 0
+  - name: DuckLineBack2
+    uniqueID: 1679472519
+    locked: 0
+  - name: DuckLineBack3
+    uniqueID: 3605648033
+    locked: 0
+  - name: DuckLineBack4
+    uniqueID: 1377820547
+    locked: 0
+  - name: DuckLineBack5
+    uniqueID: 3232632691
+    locked: 0
+  - name: DuckLineBack6
+    uniqueID: 1931193753
     locked: 0
   - name: Decorations3
     uniqueID: 2737427249
     locked: 0
-  - name: PlayLine3
+  - name: DuckLineForward1
     uniqueID: 2306110581
+    locked: 0
+  - name: DuckLineForward2
+    uniqueID: 146966429
+    locked: 0
+  - name: DuckLineForward3
+    uniqueID: 1836841931
     locked: 0
   - name: Decorations4
     uniqueID: 1663602263

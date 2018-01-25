@@ -21,3 +21,8 @@ Duck.prefab is created. Duck can move, die, change directions reaching screen bo
 Particle System added. Duck now is being dynamically created on run.
 
 ![ ](DuckCreationOnRun.gif)
+
+
+Game starts to be interesting!
+
+![ ](GameStartsToBeInteresting.gif)
