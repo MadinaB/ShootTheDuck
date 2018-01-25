@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61972359597737318}
   - component: {fileID: 114291373136531540}
   - component: {fileID: 114739731663193260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shot_blue_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
