@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: c0fd90bf14cdc4001b9189744365b13b
-timeCreated: 1516803016
+timeCreated: 1516833811
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MouseOutlinePrefab: {fileID: 4696944866936456, guid: 1d13dbc24a3a945948dd206f100aadaa,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

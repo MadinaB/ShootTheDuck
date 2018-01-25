@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 2e67cd5f5f5c4402d82b05f584d1b46f
-timeCreated: 1516833837
+guid: d66746ce1df2a49978e24a2cf4cad1b1
+timeCreated: 1516854710
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - shotPrefab: {fileID: 4111205105218842, guid: 02d483f8319034305be209f8d594e2b6,
+  - smokeEffect: {fileID: 198121134404162614, guid: 29c6b72db0ee04c5291d133375b08751,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

@@ -16,3 +16,8 @@ Decorations.prefab is being dynamically created at game start. Riffle gun featur
 Duck.prefab is created. Duck can move, die, change directions reaching screen borders.
 
 ![ ](DuckComesToLife.gif)
+
+
+Particle System added. Duck now is being dynamically created on run.
+
+![ ](DuckCreationOnRun.gif)

@@ -7,6 +7,7 @@ public class DuckMoveScript : MonoBehaviour {
 	public Vector2 speed = new Vector2(10, 10);
 	public Vector2 direction = new Vector2(1, 0);
 	public Vector3 position = new Vector3(0, -1, 0);
+	//public float layer = 0;
 	public bool DirectionOnChange = true;
 
 	private Vector2 movement;
