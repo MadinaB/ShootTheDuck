@@ -279,11 +279,19 @@ MonoBehaviour:
     type: 2}
   RifflePrefab: {fileID: 4988923290725092, guid: 1d6ce28e9eebe47858f6268711a94810,
     type: 2}
+  MenuPrefab: {fileID: 4250113556212674, guid: 41d99e92a3edb4b7e93d0eb2ef93fb81, type: 2}
   targetAmounts: 0300000005000000
-  targetSpeeds: 0500000005000000
+  targetSpeeds1: 050000000a000000
   targetLayers:
   - BigDuckLine
   - SmallDuckLine
+  GameTargets: 10
+  GameTargets1: 5
+  GameTargets2: 5
+  GameTime: 10
+  GameSpeed: 10
   score: 0
   totalScore: 0
   ducksKilled: 0
+  gameMode: 1
+  gameStarted: 0

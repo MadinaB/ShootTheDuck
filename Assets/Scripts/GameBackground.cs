@@ -8,12 +8,14 @@ public class GameBackground : MonoBehaviour {
 	public Transform TargetObjects2Prefab;
 	public Transform DecorationsPrefab;
 	public Transform RifflePrefab;
+	public Transform MenuPrefab;
 
 	List<Transform> TargetObjectsTransforms;
 	Transform DecorationsTransform;
 	Transform RiffleTransform;
 	Transform TargetObjects1Transform;
 	Transform TargetObjects2Transform;
+	Transform MenuTransform;
 
 
 
@@ -22,7 +24,7 @@ public class GameBackground : MonoBehaviour {
 		new List<string>(){"duck_brown_small","duck_white_small","duck_yellow_small"}	
 	};
 	public List<int> targetAmounts = new List<int>(){3,5};
-	public List<int> targetSpeeds = new List<int>(){7,12};
+	public List<int> targetSpeeds1 = new List<int>(){5,10};
 	public List<string> targetLayers = new List<string>(){"BigDuckLine","SmallDuckLine"};
 
 
@@ -39,32 +41,31 @@ public class GameBackground : MonoBehaviour {
 	float timer = 0.0f;
 	int seconds = 0;
 
-	bool gameMode = true;
-	bool gameStarted = false;
+	public bool gameMode = false;
+	public bool gameStarted = false;
 
 	void Start () {
 		readTargetsData ();
-		//startGame ();
 	}
 
 	void Update () {
 		if (gameMode) {
 			if (!gameStarted) {
-				startGame ();
 				gameStarted = true;
+				startGame ();
+			} else {
+				updateGame ();
+				timer += Time.deltaTime;
+				seconds = (int)timer % 60;
+				if (seconds > GameTime) {
+					gameMode = false;
+					gameStarted = false;
+					destroyGame();
+				}
 			}
-			updateGame ();
-			timer += Time.deltaTime;
-			seconds = (int)timer % 60;
-			if (seconds > GameTime) {
-				destroyGame ();
-				gameMode = false;
-				gameStarted = false;
-			}
-		} else {
-			startMenu();
-		}
-	}
+		} 
+	}	
+
 
 	void readTargetsData(){
 		GameTargets = 10;
@@ -76,6 +77,8 @@ public class GameBackground : MonoBehaviour {
 
 	void startGame(){
 
+		timer = 0.0f;
+		seconds = 0;
 		score = 0;
 		totalScore = 0;
 		ducksKilled = 0;
@@ -89,30 +92,21 @@ public class GameBackground : MonoBehaviour {
 		RiffleTransform.gameObject.GetComponent<GunScript>().speed = GameSpeed;
 
 		TargetObjects1Transform = Instantiate (TargetObjects1Prefab) as Transform;
-		TargetObjects1Transform.gameObject.GetComponent<TargetSubset>().instantinateTargets(targets[0], targetLayers[0], targetAmounts[0], targetSpeeds[0]);
+		TargetObjects1Transform.gameObject.GetComponent<TargetSubset>().instantinateTargets(targets[0], targetLayers[0], targetAmounts[0], targetSpeeds1[0]);
 		TargetObjects1Transform.SetParent (this.transform);
 		TargetObjects1Transform.position = transform.position;
 
 		TargetObjects2Transform = (Instantiate (TargetObjects2Prefab) as Transform);
-		TargetObjects2Transform.gameObject.GetComponent<TargetSubset>().instantinateTargets(targets[1], targetLayers[1], targetAmounts[1], targetSpeeds[1]);
+		TargetObjects2Transform.gameObject.GetComponent<TargetSubset>().instantinateTargets(targets[1], targetLayers[1], targetAmounts[1], targetSpeeds1[1]);
 		TargetObjects2Transform.SetParent (this.transform);
 		TargetObjects2Transform.position = transform.position;
 
-		/*for (int i = 0; i < targetsSize; i++) {
-			TargetObjectsTransforms.Add (Instantiate (TargetObjectsPrefab) as Transform);
-			TargetObjectsTransforms[i].gameObject.GetComponent<TargetSubset>().instantinateTargets(targets[i], targetLayers[i], targetAmounts[i], targetSpeeds[i]);
-
-		}*/
 	}
 	void updateGame(){
 		
 		TargetObjects1Transform.gameObject.GetComponent<TargetSubset>().updateTargets();
 		TargetObjects2Transform.gameObject.GetComponent<TargetSubset>().updateTargets(); 
-		/*
-		for(int i = 0; i<TargetObjectsTransforms.Count; i++){
-			TargetObjectsTransforms[i].gameObject.GetComponent<TargetSubset>().updateTargets();
-		}
-		*/
+
 	}
 
 	void destroyGame(){
@@ -120,6 +114,7 @@ public class GameBackground : MonoBehaviour {
 	}
 
 	IEnumerator destroyGameRoutine(){
+
 		foreach (Transform child in RiffleTransform)
 		{
 			Destroy(child.gameObject);
@@ -147,14 +142,7 @@ public class GameBackground : MonoBehaviour {
 		Destroy (TargetObjects1Transform.gameObject);
 		Destroy (TargetObjects2Transform.gameObject);
 		Destroy (GameObject.FindWithTag("Finish"));
-	}
 
-	void startMenu(){
-		DecorationsTransform = Instantiate(DecorationsPrefab) as Transform;
-		DecorationsTransform.position = transform.position;
-
-		//MenuTransform = Instantiate(MenuPrefab) as Transform;
-		//MenuTransform.position = transform.position;
 	}
 
 
