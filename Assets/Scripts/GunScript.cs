@@ -6,6 +6,7 @@ public class GunScript : MonoBehaviour {
 
 	public Transform shotPrefab;
 	public float shootingRate = 0.25f;
+	public int speed = 10;
 	private float shootCooldown;
 
 	void Start()
@@ -37,6 +38,7 @@ public class GunScript : MonoBehaviour {
 				var distance = heading.magnitude;
 				var direction = heading / distance; 
 				move.direction = direction.normalized ;
+				move.speed = new Vector2( speed, speed );
 			}
 		}
 	}
