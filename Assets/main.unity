@@ -164,7 +164,14 @@ Prefab:
       value: 
       objectReference: {fileID: 4988923290725092, guid: 1d6ce28e9eebe47858f6268711a94810,
         type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 114131419365958432, guid: 5c0e659c68e344c8e84c9c36203f44b9,
+        type: 2}
+      propertyPath: TargetObjectsPrefab
+      value: 
+      objectReference: {fileID: 4553785100351036, guid: 698b69d82682f4f498371844eac6ab1d,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114131419365958432, guid: 5c0e659c68e344c8e84c9c36203f44b9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5c0e659c68e344c8e84c9c36203f44b9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2109181203
@@ -248,3 +255,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2130560742 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1282655184774712, guid: 5c0e659c68e344c8e84c9c36203f44b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 18150952}
+--- !u!114 &2130560743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130560742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9db5cf0442754f3bb82863896468044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetObjects1Prefab: {fileID: 4553785100351036, guid: 698b69d82682f4f498371844eac6ab1d,
+    type: 2}
+  TargetObjects2Prefab: {fileID: 4553785100351036, guid: 698b69d82682f4f498371844eac6ab1d,
+    type: 2}
+  DecorationsPrefab: {fileID: 4120380508418720, guid: 07912d57e56d1485b97c8a52ef47551c,
+    type: 2}
+  RifflePrefab: {fileID: 4988923290725092, guid: 1d6ce28e9eebe47858f6268711a94810,
+    type: 2}
+  targetAmounts: 0300000005000000
+  targetSpeeds: 0500000005000000
+  targetLayers:
+  - BigDuckLine
+  - SmallDuckLine
+  score: 0
+  totalScore: 0
+  ducksKilled: 0

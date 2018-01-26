@@ -5,50 +5,50 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
+	public ParticleSystem SpecialEffectPrefab;
 	public int hp = 1;
 
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
-		countScore (damageCount);
+		countScore(damageCount);
 
 		if (hp <= 0)
 		{
-			SpecialEffectsHelperScript.Instance.Explosion(transform.position);
 			destroyDuck ();
+			makeEffect(transform.position);
 			Destroy(gameObject);
 		}
 	}
 
-	public void countScore(int damageCount){
-		GameBackground bgTask = GameObject.FindGameObjectWithTag ("BackgroundTask").GetComponent<GameBackground> ();
-		string duck = gameObject.GetComponent<SpriteRenderer> ().sortingLayerName;
+	private ParticleSystem makeEffect(Vector3 position){
+		ParticleSystem newParticleSystem = Instantiate(
+			SpecialEffectPrefab,
+			position,
+			Quaternion.identity
+		) as ParticleSystem;
 
-		if (duck == bgTask.bigDuckLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().score += damageCount;
-		}
-		else if (duck == bgTask.smallDuckLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().score += (damageCount*3);
-		}
-		else if (duck == bgTask.targetCircleLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().score += (damageCount*2);
+		Destroy(
+			newParticleSystem.gameObject,
+			newParticleSystem.startLifetime
+		);
+
+		return newParticleSystem;
+
+	}
+
+	public void countScore(int damageCount){
+		if (this.transform.parent != null) {
+			this.transform.parent.gameObject.GetComponent<TargetSubset> ().targetScore += 1;
 		}
 
 	}
 
 	public void destroyDuck(){
-		GameBackground bgTask = GameObject.FindGameObjectWithTag ("BackgroundTask").GetComponent<GameBackground> ();
-		string duck = gameObject.GetComponent<SpriteRenderer> ().sortingLayerName;
+		if (this.transform.parent != null) {
+			this.transform.parent.gameObject.GetComponent<TargetSubset> ().targetKilled = true;
+		}
 
-		if (duck == bgTask.bigDuckLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().bigDuckKilled = true;
-		}
-		else if (duck == bgTask.smallDuckLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().smallDuckKilled = true;
-		}
-		else if (duck == bgTask.targetCircleLayer) {
-			GameObject.FindGameObjectWithTag("BackgroundTask").GetComponent<GameBackground>().targetCircleKilled= true;
-		}
 	}
 
 		
@@ -59,9 +59,6 @@ public class HealthScript : MonoBehaviour
 			Damage (shot.damage);
 			Destroy (shot.gameObject); 
 		} 
-		//else {
-		//	Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), otherCollider.GetComponent<Collider2D>());
-		//}
 
 	}
 }

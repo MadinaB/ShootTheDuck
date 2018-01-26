@@ -26,3 +26,8 @@ Particle System added. Duck now is being dynamically created on run.
 Game starts to be interesting!
 
 ![ ](GameStartsToBeInteresting.gif)
+
+
+Everything on this screen is created on run. You can set your score, amount of ducks and layers. Ducks killed are being counted. Have fun!
+
+![ ](DucksPlay.gif)

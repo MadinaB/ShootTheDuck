@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc392e97e9124fb5a338a4142df7b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpecialEffectPrefab: {fileID: 198369489017177038, guid: b8a0c41cae9de46ae870f1d82b3012c6,
+    type: 2}
   hp: 1
 --- !u!114 &114625738807643342
 MonoBehaviour:
